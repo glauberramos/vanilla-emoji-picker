@@ -1,16 +1,3 @@
-const getAllElementsWithAttribute = (attribute) => {
-  var matchingElements = [];
-  var allElements = document.getElementsByTagName('*');
-  for (var i = 0, n = allElements.length; i < n; i++)
-  {
-    if (allElements[i].getAttribute(attribute) !== null)
-    {
-      matchingElements.push(allElements[i]);
-    }
-  }
-  return matchingElements;
-}
-
 (() => {
   const generateElements = (emojiInput) => {
     var parent = emojiInput.parentNode;
@@ -65,7 +52,8 @@ const getAllElementsWithAttribute = (attribute) => {
           margin: 5px;`
 
         const emojiLink = document.createElement('a')
-        emojiLink.style = `text-decoration: none;`
+        emojiLink.style = `text-decoration: none;
+          font-size: 24px;`
         emojiLink.setAttribute('href', "#")
         emojiLink.innerHTML = String.fromCodePoint(item)
         emojiLink.onclick = clickLink
@@ -77,7 +65,7 @@ const getAllElementsWithAttribute = (attribute) => {
     emojiContainer.appendChild(emojiPicker)
   }
 
-  const emojiInputs = getAllElementsWithAttribute('data-emoji')
+  const emojiInputs = document.querySelectorAll('[data-emoji="true"]');
 
   emojiInputs.forEach((element) => {
     generateElements(element)
