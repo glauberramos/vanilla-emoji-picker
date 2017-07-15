@@ -7,8 +7,7 @@ const generateElements = (emojiInput) => {
   emojiInput.style = `width: 100%`
 
   const emojiContainer = document.createElement('div')
-  emojiContainer.style = `position: relative;
-    width: 300px;`
+  emojiContainer.style = `position: relative;`
 
   const parent = emojiInput.parentNode;
   parent.replaceChild(emojiContainer, emojiInput)
