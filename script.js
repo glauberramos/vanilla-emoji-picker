@@ -1,22 +1,23 @@
-(() => {
-  const getAllElementsWithAttribute = (attribute) => {
-    var matchingElements = [];
-    var allElements = document.getElementsByTagName('*');
-    for (var i = 0, n = allElements.length; i < n; i++)
+const getAllElementsWithAttribute = (attribute) => {
+  var matchingElements = [];
+  var allElements = document.getElementsByTagName('*');
+  for (var i = 0, n = allElements.length; i < n; i++)
+  {
+    if (allElements[i].getAttribute(attribute) !== null)
     {
-      if (allElements[i].getAttribute(attribute) !== null)
-      {
-        matchingElements.push(allElements[i]);
-      }
+      matchingElements.push(allElements[i]);
     }
-    return matchingElements;
   }
+  return matchingElements;
+}
 
+(() => {
   const generateElements = (emojiInput) => {
     var parent = emojiInput.parentNode;
 
     const clickLink = (event) => {
       emojiInput.value = emojiInput.value + event.target.innerHTML
+      emojiPicker.style.display = 'none';
     }
 
     const emojiContainer = document.createElement('div')
@@ -27,6 +28,16 @@
 
     const emojiPicker = document.createElement('div')
     emojiPicker.setAttribute('class', "emoji-picker")
+
+    const emojiTrigger = document.createElement('a')
+    emojiTrigger.setAttribute('class', "emoji-trigger")
+    emojiTrigger.setAttribute('href', "#")
+    emojiTrigger.innerHTML = ":)"
+    emojiTrigger.onclick = () => {
+      emojiPicker.style.display = emojiPicker.style.display === 'block' ? 'none' : 'block';
+    }
+
+    emojiContainer.appendChild(emojiTrigger)
 
     const emojiList = document.createElement('ul')
     const emojis = [0x1F601, 0x1F604, 0x1F60D];
