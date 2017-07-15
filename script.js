@@ -1,4 +1,17 @@
 (() => {
+  const getAllElementsWithAttribute = (attribute) => {
+    var matchingElements = [];
+    var allElements = document.getElementsByTagName('*');
+    for (var i = 0, n = allElements.length; i < n; i++)
+    {
+      if (allElements[i].getAttribute(attribute) !== null)
+      {
+        matchingElements.push(allElements[i]);
+      }
+    }
+    return matchingElements;
+  }
+
   const generateElements = (emojiInput) => {
     var parent = emojiInput.parentNode;
 
@@ -9,7 +22,7 @@
     const emojiContainer = document.createElement('div')
     emojiContainer.setAttribute('class', "emoji-container")
 
-    parent.replaceChild(emojiContainer, emojiInput);
+    parent.replaceChild(emojiContainer, emojiInput)
     emojiContainer.appendChild(emojiInput)
 
     const emojiPicker = document.createElement('div')
@@ -32,7 +45,7 @@
     emojiContainer.appendChild(emojiPicker)
   }
 
-  const emojiInputs = document.querySelectorAll('.emoji-input')
+  const emojiInputs = getAllElementsWithAttribute('data-emoji')
 
   emojiInputs.forEach((element) => {
     generateElements(element)
