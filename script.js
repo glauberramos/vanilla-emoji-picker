@@ -1,7 +1,5 @@
 (() => {
   const generateElements = (emojiInput) => {
-    var parent = emojiInput.parentNode;
-
     const clickLink = (event) => {
       emojiInput.value = emojiInput.value + event.target.innerHTML
       emojiPicker.style.display = 'none';
@@ -11,6 +9,7 @@
     emojiContainer.style = `position: relative;
       width: 300px;`
 
+    const parent = emojiInput.parentNode;
     parent.replaceChild(emojiContainer, emojiInput)
     emojiContainer.appendChild(emojiInput)
 
