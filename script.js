@@ -1,33 +1,40 @@
 (() => {
-  const emojiInput = document.querySelector('.emoji-input')
+  const generateElements = (emojiInput) => {
+    var parent = emojiInput.parentNode;
 
-  const emojiContainer = document.createElement('div')
-  emojiContainer.setAttribute('class', "emoji-container")
+    const clickLink = (event) => {
+      emojiInput.value = emojiInput.value + event.target.innerHTML
+    }
 
-  const emojiPicker = document.createElement('div')
-  emojiPicker.setAttribute('class', "emoji-picker")
+    const emojiContainer = document.createElement('div')
+    emojiContainer.setAttribute('class', "emoji-container")
 
-  const emojiList = document.createElement('ul')
-  const emojis = [0x1F601, 0x1F604, 0x1F60D];
+    parent.replaceChild(emojiContainer, emojiInput);
+    emojiContainer.appendChild(emojiInput)
 
-  const clickLink = (event) => {
-    document.querySelector('.emoji-input').value = document.querySelector('.emoji-input').value + event.target.innerHTML
+    const emojiPicker = document.createElement('div')
+    emojiPicker.setAttribute('class', "emoji-picker")
+
+    const emojiList = document.createElement('ul')
+    const emojis = [0x1F601, 0x1F604, 0x1F60D];
+
+    emojis.map((item) => {
+        const emojiLi = document.createElement('li')
+        const emojiLink = document.createElement('a')
+        emojiLink.setAttribute('href', "#")
+        emojiLink.innerHTML = String.fromCodePoint(item)
+        emojiLink.onclick = clickLink
+
+        emojiList.appendChild(emojiLink)
+    })
+
+    emojiPicker.appendChild(emojiList)
+    emojiContainer.appendChild(emojiPicker)
   }
 
-  emojis.map((item) => {
-      const emojiLi = document.createElement('li')
-      const emojiLink = document.createElement('a')
-      emojiLink.setAttribute('href', "#")
-      emojiLink.innerHTML = String.fromCodePoint(item)
-      emojiLink.onclick = clickLink
+  const emojiInputs = document.querySelectorAll('.emoji-input')
 
-      emojiList.appendChild(emojiLink)
+  emojiInputs.forEach((element) => {
+    generateElements(element)
   })
-
-  emojiPicker.appendChild(emojiList)
-  emojiContainer.appendChild(emojiPicker)
-
-  emojiInput.parentNode.insertBefore(emojiContainer, emojiInput.nextSibling)
-
-  console.log(emojiList)
 })()
