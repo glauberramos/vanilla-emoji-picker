@@ -22,7 +22,7 @@ const generateElements = (emojiInput) => {
 
   const emojiPicker = document.createElement('div')
   emojiPicker.style = `position: absolute;
-    right: 2px;
+    right: 15px;
     top: 20px;
     z-index: 999;
     display: none;
