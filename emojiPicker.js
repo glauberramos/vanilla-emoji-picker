@@ -3,7 +3,12 @@
 const generateElements = (emojiInput) => {
   const clickLink = (event) => {
     emojiInput.value = emojiInput.value + event.target.innerHTML
-    emojiPicker.style.display = 'none';
+    emojiPicker.style.display = 'none'
+
+    //trigger ng-change for angular
+    if (typeof angular !== "undefined") {
+      angular.element(emojiInput).triggerHandler('change')
+    }
   }
 
   emojiInput.style = `width: 100%`
@@ -11,7 +16,7 @@ const generateElements = (emojiInput) => {
   const emojiContainer = document.createElement('div')
   emojiContainer.style = `position: relative;`
 
-  const parent = emojiInput.parentNode;
+  const parent = emojiInput.parentNode
   parent.replaceChild(emojiContainer, emojiInput)
   emojiContainer.appendChild(emojiInput)
 
