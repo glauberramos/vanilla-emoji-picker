@@ -17,7 +17,8 @@ const generateElements = (emojiInput) => {
 
   const emojiPicker = document.createElement('div')
   emojiPicker.style = `position: absolute;
-    right: 0;
+    right: 2px;
+    top: 20px;
     z-index: 999;
     display: none;
     width: 225px;
