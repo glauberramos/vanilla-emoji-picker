@@ -26,7 +26,7 @@ const generateElements = (emojiInput) => {
     top: 20px;
     z-index: 999;
     display: none;
-    width: 225px;
+    width: 175px;
     padding: 5px 2px 5px 5px;
     margin-top: 5px;
     overflow: hidden;
@@ -50,8 +50,9 @@ const generateElements = (emojiInput) => {
 
   const emojiList = document.createElement('ul')
   emojiList.style = `padding: 0;
+    margin: 0;
     list-style: none;`
-  const emojis = [0x1F601, 0x1F604, 0x1F60D];
+  const emojis = [0x1F601, 0x1F602, 0x1F603, 0x1F60D, 0x1F60A, 0x1F614, 0x1F613, 0x1F633, 0x1F631, 0x1F621, 0x1F621, 0x1F648, 0x1F62D, 0x1F44D, 0x1F389];
 
   emojis.map((item) => {
       const emojiLi = document.createElement('li')
@@ -60,6 +61,7 @@ const generateElements = (emojiInput) => {
 
       const emojiLink = document.createElement('a')
       emojiLink.style = `text-decoration: none;
+        margin: 5px;
         position: initial;
         font-size: 24px;`
       emojiLink.setAttribute('href', "javascript:void(0)")

@@ -1,0 +1,23 @@
+{
+  "name": "emoji-picker",
+  "version": "0.0.1",
+  "description": "Vanilla js simple emoji picker",
+  "main": "emojiPicker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glauberramos/emoji-picker.git"
+  },
+  "keywords": [
+    "emoji-picker",
+    "emoji"
+  ],
+  "author": "Glauber Ramos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/glauberramos/emoji-picker/issues"
+  },
+  "homepage": "https://github.com/glauberramos/emoji-picker#readme"
+}
