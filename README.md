@@ -19,7 +19,7 @@ npm install vanilla-emoji-picker --save
 First, include the scrip.
 
 ```html
-<script src="node_modules/dist/emojiPicker.min.js"></script>
+<script src="node_modules/vanilla-emoji-picker/lib/emojiPicker.js"></script>
 ```
 
 Add attribute `data-emoji-picker="true"` to any text input or textarea you want to add it

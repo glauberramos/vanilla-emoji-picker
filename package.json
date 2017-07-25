@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-debug": "browserify src/emojiPicker.js -s EmojiPicker -t [babelify] -o dist/emojiPicker.js",
-    "build-min": "uglifyjs dist/emojiPicker.js -c screw_ie8=true,unused=false -o dist/emojiPicker.min.js"
+    "build-min": "uglifyjs dist/emojiPicker.js -c screw_ie8=true,unused=false -o dist/emojiPicker.min.js",
+    "prepublish": "babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,10 @@
   },
   "homepage": "https://github.com/glauberramos/emoji-picker#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "uglify-js": "^2.8.22"
