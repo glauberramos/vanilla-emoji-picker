@@ -3,9 +3,9 @@
   <body>
     <div class="container">
       <h1>Emoji Picker</h1>
-      <input data-emoji="true" type="text" value="Input text">
-      <input data-emoji="true" type="text" value="Input text">
-      <textarea data-emoji="true">Textarea</textarea>
+      <input data-emoji-picker="true" type="text" value="Input text">
+      <input data-emoji-picker="true" type="text" value="Input text">
+      <textarea data-emoji-picker="true">Textarea</textarea>
     </div>
   </body>
   <style>
@@ -49,7 +49,7 @@
   <script src="emojiPicker.js"></script>
   <script>
     (() => {
-      window.EmojiPicker.init()
+      new EmojiPicker()
     })()
   </script>
 </html>
