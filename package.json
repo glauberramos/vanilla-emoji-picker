@@ -2,7 +2,7 @@
   "name": "vanilla-emoji-picker",
   "version": "0.0.1",
   "description": "Modern emoji picker. Super light, simple and no frameworks",
-  "main": "emojiPicker.js",
+  "main": "emojiPicker.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
