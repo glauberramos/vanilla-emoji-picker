@@ -1,9 +1,31 @@
-# Emoji Picker
+# Vanilla emoji Picker
 
-Simple emoji picker in vanilla js
+> Modern emoji picker. Super light, simple and no frameworks
 
-## How to install
+## Why
 
-1. Copy emojiPicker.js into your project
-2. Add attribute `data-emoji="true"` to any text input or texarea you want to add it
-3. Run `window.EmojiPicker.init()` to initializate the Emoji Picker
+We needed a modern way to use emojis. Something that require almost zero effort, light and simple. That's why we created Vanilla emoji picker.
+
+## Install
+
+You can get it on npm.
+
+```
+npm install vanilla-emoji-picker --save
+```
+
+## Setup
+
+First, include the scrip.
+
+```html
+<script src="node_modules/emojiPicker.min.js"></script>
+```
+
+Add attribute `data-emoji="true"` to any text input or textarea you want to add it
+
+Then execute this command to initiate the plugin:
+
+```js
+window.EmojiPicker.init()
+```

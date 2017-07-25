@@ -1,7 +1,7 @@
 {
-  "name": "emoji-picker",
+  "name": "vanilla-emoji-picker",
   "version": "0.0.1",
-  "description": "Vanilla js simple emoji picker",
+  "description": "Modern emoji picker. Super light, simple and no frameworks",
   "main": "emojiPicker.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,7 @@
   },
   "keywords": [
     "emoji-picker",
+    "vanilla-js",
     "emoji"
   ],
   "author": "Glauber Ramos",
