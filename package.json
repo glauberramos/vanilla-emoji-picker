@@ -2,9 +2,11 @@
   "name": "vanilla-emoji-picker",
   "version": "0.0.1",
   "description": "Modern emoji picker. Super light, simple and no frameworks",
-  "main": "emojiPicker.min.js",
+  "main": "lib/emojiPicker.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-debug": "browserify src/emojiPicker.js -s EmojiPicker -t [babelify] -o dist/emojiPicker.js",
+    "build-min": "uglifyjs dist/emojiPicker.js -c screw_ie8=true,unused=false -o dist/emojiPicker.min.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/glauberramos/emoji-picker/issues"
   },
-  "homepage": "https://github.com/glauberramos/emoji-picker#readme"
+  "homepage": "https://github.com/glauberramos/emoji-picker#readme",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "uglify-js": "^2.8.22"
+  }
 }
