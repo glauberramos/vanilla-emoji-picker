@@ -2,7 +2,7 @@
   "name": "vanilla-emoji-picker",
   "version": "0.1.2",
   "description": "Modern emoji picker. Super light, simple and no frameworks",
-  "main": "lib/emojiPicker.js",
+  "main": "dist/emojiPicker.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-debug": "browserify src/emojiPicker.js -s EmojiPicker -t [babelify] -o dist/emojiPicker.js",
