@@ -13,7 +13,8 @@ class EmojiPicker {
 
   generateElements(emojiInput) {
     const clickLink = (event) => {
-      emojiInput.value = emojiInput.value + event.target.innerHTML
+      var caretPos = emojiInput.selectionStart;
+      emojiInput.value = emojiInput.value.substring(0, caretPos) + event.target.innerHTML + emojiInput.value.substring(caretPos)
       emojiPicker.style.display = 'none'
 
       //trigger ng-change for angular
