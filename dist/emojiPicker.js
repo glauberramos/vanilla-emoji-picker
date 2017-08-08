@@ -79,14 +79,23 @@
         emojiContainer.appendChild(emojiInput);
 
         var emojiPicker = document.createElement('div');
-        emojiPicker.style = 'position: absolute;\n      right: 2px;\n      top: 20px;\n      z-index: 999;\n      display: none;\n      width: 175px;\n      padding: 5px 2px 5px 5px;\n      margin-top: 5px;\n      overflow: hidden;\n      background: #fff;\n      border: 1px #dfdfdf solid;\n      border-radius: 3px;\n      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);';
+        emojiPicker.tabIndex = 0;
+
+        emojiPicker.addEventListener("blur", function (event) {
+          emojiPicker.style.display = 'none';
+        }, false);
+
+        emojiPicker.style = 'position: absolute;\n      right: 2px;\n      outline: none;\n      top: 20px;\n      z-index: 999;\n      display: none;\n      width: 175px;\n      padding: 7px 7px 7px 7px;\n      margin-top: 5px;\n      overflow: hidden;\n      background: #fff;\n      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);\n      border-radius: 2px;';
 
         var emojiTrigger = document.createElement('a');
         emojiTrigger.style = 'position: absolute;\n      top: 4px;\n      right: 4px;\n      text-decoration: none;';
         emojiTrigger.setAttribute('href', "javascript:void(0)");
         emojiTrigger.innerHTML = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 12 14\"><path d=\"M8.9 8.4q-0.3 0.9-1.1 1.5t-1.8 0.6-1.8-0.6-1.1-1.5q-0.1-0.2 0-0.4t0.3-0.2q0.2-0.1 0.4 0t0.2 0.3q0.2 0.6 0.7 1t1.2 0.4 1.2-0.4 0.7-1q0.1-0.2 0.3-0.3t0.4 0 0.3 0.2 0 0.4zM5 5q0 0.4-0.3 0.7t-0.7 0.3-0.7-0.3-0.3-0.7 0.3-0.7 0.7-0.3 0.7 0.3 0.3 0.7zM9 5q0 0.4-0.3 0.7t-0.7 0.3-0.7-0.3-0.3-0.7 0.3-0.7 0.7-0.3 0.7 0.3 0.3 0.7zM11 7q0-1-0.4-1.9t-1.1-1.6-1.6-1.1-1.9-0.4-1.9 0.4-1.6 1.1-1.1 1.6-0.4 1.9 0.4 1.9 1.1 1.6 1.6 1.1 1.9 0.4 1.9-0.4 1.6-1.1 1.1-1.6 0.4-1.9zM12 7q0 1.6-0.8 3t-2.2 2.2-3 0.8-3-0.8-2.2-2.2-0.8-3 0.8-3 2.2-2.2 3-0.8 3 0.8 2.2 2.2 0.8 3z\"/></svg>";
         emojiTrigger.onclick = function () {
-          emojiPicker.style.display = emojiPicker.style.display === 'block' ? 'none' : 'block';
+          if (emojiPicker.style.display === 'none') {
+            emojiPicker.style.display = 'block';
+          }
+          emojiPicker.focus();
         };
 
         emojiContainer.appendChild(emojiTrigger);
@@ -103,7 +112,7 @@
           emojiLink.style = 'text-decoration: none;\n          margin: 5px;\n          position: initial;\n          font-size: 24px;';
           emojiLink.setAttribute('href', "javascript:void(0)");
           emojiLink.innerHTML = String.fromCodePoint(item);
-          emojiLink.onclick = clickLink;
+          emojiLink.onmousedown = clickLink;
 
           emojiList.appendChild(emojiLink);
         });
