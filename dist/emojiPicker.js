@@ -61,7 +61,7 @@
       value: function generateElements(emojiInput) {
         var clickLink = function clickLink(event) {
           var caretPos = emojiInput.selectionStart;
-          emojiInput.value = emojiInput.value.substring(0, caretPos) + event.target.innerHTML + emojiInput.value.substring(caretPos);
+          emojiInput.value = emojiInput.value.substring(0, caretPos) + ' ' + event.target.innerHTML + emojiInput.value.substring(caretPos);
           emojiPicker.style.display = 'none';
 
           //trigger ng-change for angular
