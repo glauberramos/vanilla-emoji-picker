@@ -1,6 +1,6 @@
 {
   "name": "vanilla-emoji-picker",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Modern emoji picker. Super light, simple and no frameworks",
   "main": "dist/emojiPicker.min.js",
   "scripts": {
@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/glauberramos/emoji-picker#readme",
   "devDependencies": {
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "uglify-js": "^2.8.22"
