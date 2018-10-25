@@ -1,6 +1,6 @@
 {
   "name": "vanilla-emoji-picker",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Modern emoji picker. Super light, simple and no frameworks",
   "main": "dist/emojiPicker.min.js",
   "scripts": {
@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/glauberramos/emoji-picker.git"
   },
-  "keywords": ["emoji-picker", "vanilla-js", "emoji"],
+  "keywords": [
+    "emoji-picker",
+    "vanilla-js",
+    "emoji"
+  ],
   "author": "Glauber Ramos",
   "license": "MIT",
   "bugs": {
