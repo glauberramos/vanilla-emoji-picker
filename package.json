@@ -1,6 +1,6 @@
 {
   "name": "vanilla-emoji-picker",
-  "version": "0.1.7",
+  "version": "0.2.4",
   "description": "Modern emoji picker. Super light, simple and no frameworks",
   "main": "dist/emojiPicker.min.js",
   "scripts": {
