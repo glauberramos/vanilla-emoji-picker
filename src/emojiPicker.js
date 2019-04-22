@@ -1093,7 +1093,8 @@ class EmojiPicker {
       emojiLink.innerHTML = String.fromCodePoint(item);
       emojiLink.onmousedown = clickLink;
 
-      emojiList.appendChild(emojiLink);
+      emojiLi.appendChild(emojiLink);
+      emojiList.appendChild(emojiLi);
     });
 
     emojiPicker.appendChild(emojiList);
