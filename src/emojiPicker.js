@@ -12,22 +12,43 @@ class EmojiPicker {
   }
 
   generateElements(emojiInput) {
-    const clickLink = event => {
-      event.preventDefault();
-      var caretPos = emojiInput.selectionStart;
-      emojiInput.value =
-        emojiInput.value.substring(0, caretPos) +
-        " " +
-        event.target.innerHTML +
-        emojiInput.value.substring(caretPos);
-      emojiPicker.style.display = "none";
-      emojiInput.focus();
+    var clickLinkTmp;
+    if(emojiInput.classList.contains("tinymce")){
+      clickLinkTmp = event => {
+        event.preventDefault();
+        
+        var editor =  tinymce.get(emojiInput.id);
+        editor.selection.setContent(event.target.innerHTML);
+        
+        emojiPicker.style.display = "none";
+        emojiInput.focus();
 
-      //trigger ng-change for angular
-      if (typeof angular !== "undefined") {
-        angular.element(emojiInput).triggerHandler("change");
-      }
-    };
+        //trigger ng-change for angular
+        if (typeof angular !== "undefined") {
+          angular.element(emojiInput).triggerHandler("change");
+        }
+      };
+    }
+    else{
+      clickLinkTmp = event => {
+        event.preventDefault();
+        var caretPos = emojiInput.selectionStart;
+        emojiInput.value =
+          emojiInput.value.substring(0, caretPos) +
+          " " +
+          event.target.innerHTML +
+          emojiInput.value.substring(caretPos);
+        emojiPicker.style.display = "none";
+        emojiInput.focus();
+
+        //trigger ng-change for angular
+        if (typeof angular !== "undefined") {
+          angular.element(emojiInput).triggerHandler("change");
+        }
+      };
+    }
+    
+    const clickLink = clickLinkTmp;
 
     emojiInput.style.width = "100%";
 
