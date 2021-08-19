@@ -6,6 +6,7 @@
       <input data-emoji-picker="true" type="text" value="Input text">
       <input data-emoji-picker="true" type="text" value="Input text">
       <textarea data-emoji-picker="true">Textarea</textarea>
+      <div class="div-text" data-emoji-picker="true" contenteditable="true">Text<div>area</div>
     </div>
   </body>
   <style>
@@ -30,20 +31,25 @@
       margin: 0 auto;
     }
 
-    input, textarea {
+    .div-text,input, textarea {
       font-size: 1.2em;
       padding: 12px;
       border: 1px solid #999;
       border-radius: 2px;
     }
 
-    input {
+    input,textarea {
       margin-bottom: 30px;
     }
 
     textarea {
       height: 100px;
       resize: none;
+    }
+    .div-text{
+      background-color: white;
+      text-align: left;
+      max-width: 475px;
     }
   </style>
   <script src="src/emojiPicker.js"></script>
